@@ -12,7 +12,6 @@ Group:		System/Internationalization
 License:	BSD-like
 URL:		http://www.sra.co.jp/people/m-kasahr/eb/
 Source0:	%{name}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:		locales-en zlib-devel
 Requires:		%{libname} = %{version}
 
