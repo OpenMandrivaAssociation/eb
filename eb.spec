@@ -5,7 +5,7 @@
 %define libname %mklibname %{name} 10
 
 Name:		eb
-Summary:	Eb is a library for reading EB/EPWING files
+Summary:	Library for reading EB/EPWING files
 Version:	%{version}
 Release:	%{release}
 Group:		System/Internationalization
