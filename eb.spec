@@ -4,7 +4,7 @@
 Summary:	Library for reading EB/EPWING files
 Name:		eb
 Version:	4.2.2
-Release:	%mkrel 4
+Release:	%mkrel 5
 Group:		System/Internationalization
 License:	BSD-like
 URL:		http://www.sra.co.jp/people/m-kasahr/eb/
@@ -54,6 +54,10 @@ rm -rf %{buildroot}
 
 %find_lang %{name}
 
+%find_lang ebutils 
+
+cat ebutils.lang >> %{name}.lang
+
 %if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
 %endif
@@ -72,7 +76,6 @@ rm -rf %{buildroot}
 %{_bindir}/eb*
 %{_datadir}/aclocal/eb4.m4
 %{_datadir}/eb/doc/*
-%{_datadir}/locale/*/LC_MESSAGES/ebutils.mo
 
 %files -n %{libname}
 %defattr(-,root,root)
