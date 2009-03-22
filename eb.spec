@@ -1,15 +1,16 @@
+%define soname 13
 %define libname_orig lib%{name}
-%define libname %mklibname %{name} 10
+%define libname %mklibname %{name} %{soname}
+%define develname %mklibname %{name} -d
 
 Summary:	Library for reading EB/EPWING files
 Name:		eb
-Version:	4.2.2
-Release:	%mkrel 5
+Version:	4.4.1
+Release:	%mkrel 1
 Group:		System/Internationalization
 License:	BSD-like
 URL:		http://www.sra.co.jp/people/m-kasahr/eb/
-Source0:	%{name}-%{version}.tar.bz2
-Patch0:		eb-linkage_fix.diff
+Source0:	ftp://ftp.sra.co.jp/pub/misc/eb/eb-%{version}.tar.lzma
 BuildRequires:	locales-en zlib-devel
 Requires:	%{libname} = %{version}
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
@@ -25,25 +26,22 @@ Provides:	%{libname_orig} = %{version}-%{release}
 %description -n	%{libname}
 Eb library.
 
-%package -n	%{libname}-devel
+%package -n	%{develname}
 Summary:	Headers of %{name} for development
 Group:		Development/C
+Conflicts:	eb <= 4.2.2-5mdv2009.0
+Obsoletes:	libeb10-devel <= 4.2.2-5mdv2009.0
 Requires:	%{libname} = %{version}
 Provides:	%{name}-devel = %{version}-%{release}
-Provides:	%{libname_orig}-devel = %{version}-%{release}
 
-%description -n	%{libname}-devel
+%description -n	%{develname}
 Eb development package: static libraries, header files, and the like.
 
 
 %prep
-
 %setup -q
-%patch0 -p0
 
 %build
-autoreconf -fis
-
 %configure2_5x
 %make
 
@@ -74,18 +72,18 @@ rm -rf %{buildroot}
 %doc AUTHORS COPYING ChangeLog README
 %config(noreplace) %{_sysconfdir}/eb.conf
 %{_bindir}/eb*
-%{_datadir}/aclocal/eb4.m4
-%{_datadir}/eb/doc/*
+%{_datadir}/eb
 
 %files -n %{libname}
 %defattr(-,root,root)
 %doc COPYING
-%{_libdir}/libeb.so.*
+%{_libdir}/libeb.so.%{soname}*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %doc COPYING
+%{_datadir}/aclocal/eb4.m4
 %{_libdir}/*.a
 %{_libdir}/*.la
 %{_libdir}/libeb.so
-%{_includedir}/eb/*
+%{_includedir}/eb
