@@ -5,12 +5,12 @@
 
 Summary:	Library for reading EB/EPWING files
 Name:		eb
-Version:	4.4.1
-Release:	%mkrel 2
+Version:	4.4.2
+Release:	%mkrel 1
 Group:		System/Internationalization
 License:	BSD-like
 URL:		http://www.sra.co.jp/people/m-kasahr/eb/
-Source0:	ftp://ftp.sra.co.jp/pub/misc/eb/eb-%{version}.tar.lzma
+Source0:	ftp://ftp.sra.co.jp/pub/misc/eb/%{name}-%{version}.tar.bz2
 BuildRequires:	locales-en zlib-devel
 Requires:	%{libname} = %{version}
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
