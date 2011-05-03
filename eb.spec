@@ -6,7 +6,7 @@
 Summary:	Library for reading EB/EPWING files
 Name:		eb
 Version:	4.4.2
-Release:	%mkrel 2
+Release:	%mkrel 3
 Group:		System/Internationalization
 License:	BSD-like
 URL:		http://www.sra.co.jp/people/m-kasahr/eb/
