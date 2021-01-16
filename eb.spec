@@ -4,8 +4,8 @@
 
 Summary:	Library for reading EB/EPWING files
 Name:		eb
-Version:	4.4.2
-Release:	13
+Version:	4.4.3
+Release:	1
 Group:		System/Internationalization
 License:	BSD-like
 Url:		http://www.sra.co.jp/people/m-kasahr/eb/
@@ -36,12 +36,12 @@ Eb development package: static libraries, header files, and the like.
 %setup -q
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %find_lang %{name}
 
