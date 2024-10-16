@@ -8,7 +8,7 @@ Version:	4.4.3
 Release:	2
 Group:		System/Internationalization
 License:	BSD-like
-Url:		http://www.sra.co.jp/people/m-kasahr/eb/
+Url:		https://www.sra.co.jp/people/m-kasahr/eb/
 Source0:	ftp://ftp.sra.co.jp/pub/misc/eb/%{name}-%{version}.tar.bz2
 BuildRequires:	locales-en
 BuildRequires:	pkgconfig(zlib)
