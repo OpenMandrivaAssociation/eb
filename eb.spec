@@ -10,6 +10,11 @@ Group:		System/Internationalization
 License:	BSD-like
 Url:		https://www.sra.co.jp/people/m-kasahr/eb/
 Source0:	ftp://ftp.sra.co.jp/pub/misc/eb/%{name}-%{version}.tar.bz2
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	locales-en
 BuildRequires:	pkgconfig(zlib)
 
